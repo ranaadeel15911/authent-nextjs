@@ -36,7 +36,7 @@ because we not sure that user will directly change userId in bson format  */
 /* createTransport will help to where to send data in that is mailtrap  */
 
         const mailOptions = {
-            from: "'Adeel' ra0511083@gmail.com",
+            from: "'Adeel WebApp' ra0511083@gmail.com",
             to: email,
             subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
             html: `<p>Click <a href="${process.env.DOMAIN}/${emailType === "VERIFY" ? "verifyemail" : "resetpassword"}?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ? "verify your email" : "reset your password"}
