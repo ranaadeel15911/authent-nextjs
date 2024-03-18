@@ -25,18 +25,17 @@ because we not sure that user will directly change userId in bson format  */
         }
 
         var transport = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: 'ra0511083@gmail.com',
-    pass: 'zwsz gmvo xbjc oksm'
-  },
+            host: "sandbox.smtp.mailtrap.io",
+            port: 2525,
+            auth: {
+              user: "9e8178ce3039ba",
+              pass: "524280159702ae"
+            }
           });
 /* createTransport will help to where to send data in that is mailtrap  */
 
         const mailOptions = {
-            from: "'Adeel's WebApp' ra0511083@gmail.com",
+            from: 'adeel@gmail.com',
             to: email,
             subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
             html: `<p>Click <a href="${process.env.DOMAIN}/${emailType === "VERIFY" ? "verifyemail" : "resetpassword"}?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ? "verify your email" : "reset your password"}
